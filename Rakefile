@@ -21,3 +21,9 @@ task :server do
   # -b runs in the background (include it or binding.pry won't work)
   exec "bundle exec rerun -b 'rackup config.ru'"
 end
+
+
+desc "Find PID"
+task :pid do
+  exec "lsof -wni tcp:9292"
+end
